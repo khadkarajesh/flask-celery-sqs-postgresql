@@ -29,11 +29,11 @@ def send_email(args):
 
 
 celery.conf.beat_schedule = {
-    'appointment reminder': {
+    'appointment reminder in every 2 minutes': {
         'task': 'remind_appointment',
         'schedule': 120.0
     },
-    'notify consultation no reply': {
+    'send email every 2 hours': {
         'task': 'send_email',
         'schedule': crontab(hour='*/2')
     }
